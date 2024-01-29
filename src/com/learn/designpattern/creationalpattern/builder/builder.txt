@@ -1,0 +1,12 @@
+The builder pattern is a design pattern that helps simplify the creation of complex objects that have many attributes. It solves the following problems:
+
+1.Having too many constructor parameters, which can be confusing and error-prone.
+2.Having inconsistent object states, when some attributes are optional and can be set later.
+3.Having complex object construction logic, which can be hard to maintain and test.
+
+
+The builder pattern allows you to create an object step by step, by using a fluent interface that chains method calls. Each method sets one attribute of the object and returns the same builder instance. The final method returns the constructed object, which is usually immutable.
+
+For example, suppose you have a class called User, which has five attributes: firstName, lastName, age, phone, and address. You can use the builder pattern to create a User object like this:
+
+User user = new User.Builder(“John”, “Doe”) // required parameters .age(25) // optional parameter .phone(“1234567890”) // optional parameter .build(); // final method that returns the User object
